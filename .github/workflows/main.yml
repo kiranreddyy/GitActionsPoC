@@ -43,5 +43,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "kiran - ${{ steps.outvars2.outputs.keyvaultUrl }}"
-          echo Add other actions to build,
+          echo ${{ if(steps.outvars2.outputs.keyvaultUrl -eq $null) }}
           echo test, and deploy your project.
