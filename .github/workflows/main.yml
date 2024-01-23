@@ -29,6 +29,16 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      - name: Set Azure KeyVault 
+        run: ./test.ps1 
+        shell: pwsh
+        id: outvars2
+          
+      - name: Publish Artifacts
+        shell: pwsh
+        run: ./publish.ps1 -az_keyvault_Url ${{ steps.outvars2.outputs.keyvaultUrl }}
+
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
