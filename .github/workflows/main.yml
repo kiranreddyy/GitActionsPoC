@@ -36,7 +36,7 @@ jobs:
           
       - name: Publish Artifacts
         shell: pwsh
-        run: powershell/publish.ps1 -az_keyvault_Url ${{ steps.outvars2.outputs.keyvaultUrl }}
+        run: powershell/publish.ps1 -az_keyvault_Url $null
 
 
       # Runs a set of commands using the runners shell
